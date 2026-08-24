@@ -1,0 +1,113 @@
+/* ==========================================================================
+   base.css
+   Estilos de base: tipografia, cores globais, elementos de texto.
+   ========================================================================== */
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  background-image:
+    radial-gradient(ellipse at top, rgba(140, 15, 15, 0.08), transparent 55%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--color-paper);
+  line-height: 1.1;
+}
+
+h1 { font-size: var(--fs-3xl); letter-spacing: 0.03em; }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+h4 { font-size: var(--fs-lg); }
+
+p {
+  max-width: 62ch;
+}
+
+p + p {
+  margin-top: var(--space-sm);
+}
+
+a {
+  color: var(--color-blood-bright);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+a:hover,
+a:focus-visible {
+  border-color: currentColor;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-blood-bright);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 1.1em;
+  height: 1.1em;
+  background: currentColor;
+  -webkit-mask: var(--icon-biohazard) center / contain no-repeat;
+          mask: var(--icon-biohazard) center / contain no-repeat;
+}
+
+.stamp {
+  font-family: var(--font-type);
+  font-size: var(--fs-xs);
+  color: var(--color-status-danger);
+  border: 2px solid var(--color-status-danger);
+  padding: var(--space-3xs) var(--space-xs);
+  display: inline-block;
+  transform: rotate(-3deg);
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
+}
+
+.redacted {
+  background: var(--color-void);
+  color: var(--color-void);
+  border-radius: 1px;
+  user-select: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-sm);
+  top: -3rem;
+  background: var(--color-blood);
+  color: var(--color-paper);
+  padding: var(--space-2xs) var(--space-sm);
+  z-index: 100;
+  transition: top var(--dur-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}

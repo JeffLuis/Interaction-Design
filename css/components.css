@@ -1,0 +1,220 @@
+/* ==========================================================================
+   components.css
+   Peças reutilizáveis: hero, linha do tempo (elemento de assinatura),
+   cartões de conteúdo e botões.
+   ========================================================================== */
+
+/* ---------- Hero -------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.hero__file {
+  background: var(--color-panel);
+  border: var(--border-hairline);
+  border-left: 4px solid var(--color-blood);
+  padding: var(--space-md) var(--space-lg);
+  position: relative;
+}
+
+.hero__file::before {
+  content: 'ARQUIVO 003 — INTERAÇÃO WEB';
+  position: absolute;
+  top: -0.65em;
+  left: var(--space-md);
+  background: var(--color-void);
+  padding-inline: var(--space-2xs);
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-dim);
+  letter-spacing: 0.08em;
+}
+
+.hero__title {
+  margin-top: var(--space-xs);
+}
+
+.hero__lede {
+  margin-top: var(--space-sm);
+  color: var(--color-ink);
+  font-size: var(--fs-lg);
+  max-width: 58ch;
+}
+
+.hero__meta {
+  margin-top: var(--space-md);
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-dim);
+}
+
+.hero__meta dt {
+  color: var(--color-ink-dim);
+}
+
+.hero__meta div {
+  display: flex;
+  gap: 0.4em;
+}
+
+.hero__meta dd {
+  color: var(--color-paper);
+}
+
+/* ---------- Grade de cartões -------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-md);
+}
+
+.card-grid--spaced {
+  margin-top: var(--space-lg);
+}
+
+.hero-figure {
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--color-panel);
+  border: var(--border-hairline);
+  padding: var(--space-md);
+  transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--color-line-strong);
+  transform: translateY(-2px);
+}
+
+.card__icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-blood-bright);
+  margin-bottom: var(--space-xs);
+}
+
+.card h3 {
+  font-size: var(--fs-md);
+  color: var(--color-paper);
+}
+
+.card p {
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-dim);
+}
+
+/* ---------- Linha do tempo (elemento de assinatura) ---------------------
+   Ordem cronológica real dos lançamentos: aqui a numeração e as datas
+   carregam informação verdadeira, por isso marcadores sequenciais fazem
+   sentido nesta seção específica.
+   ------------------------------------------------------------------------ */
+
+.timeline {
+  position: relative;
+  margin-top: var(--space-md);
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-line);
+}
+
+.timeline__entry {
+  position: relative;
+  padding-block: var(--space-sm);
+}
+
+.timeline__entry::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--space-lg) * -1 - 6px);
+  top: calc(var(--space-sm) + 4px);
+  width: 11px;
+  height: 11px;
+  background: var(--color-void);
+  border: 2px solid var(--color-blood-bright);
+  border-radius: 50%;
+}
+
+.timeline__year {
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  color: var(--color-blood-bright);
+  letter-spacing: 0.08em;
+}
+
+.timeline__entry h3 {
+  margin-top: var(--space-3xs);
+  font-size: var(--fs-md);
+}
+
+.timeline__entry p {
+  margin-top: var(--space-3xs);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-dim);
+}
+
+/* ---------- Botões -------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-type);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--space-2xs) var(--space-md);
+  border: 1px solid var(--color-blood);
+  color: var(--color-paper);
+  background: var(--color-blood-deep);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--color-blood);
+  border-color: var(--color-blood-bright);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--color-line);
+  color: var(--color-ink-dim);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: var(--color-line-strong);
+  color: var(--color-paper);
+  background: var(--color-panel-raised);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: var(--color-panel-raised);
+  border-color: var(--color-line);
+}
+
+/* ---------- Nota lateral / dica -------------------------------------------- */
+
+.note {
+  border: 1px dashed var(--color-line-strong);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-dim);
+  background: rgba(140, 15, 15, 0.06);
+}
+
+.note strong {
+  color: var(--color-paper);
+}

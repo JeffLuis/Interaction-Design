@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="dossierTitle dossierDesc">
+  <title id="dossierTitle">Ilustração de uma pasta de arquivo com relatório datilografado</title>
+  <desc id="dossierDesc">Uma pasta aberta contendo uma folha com linhas de texto simuladas, um carimbo circular e um marcador de biorrisco no canto, representando um arquivo de investigação.</desc>
+  <defs>
+    <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe9d6"/>
+      <stop offset="1" stop-color="#dcd5ba"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="480" height="360" fill="none"/>
+
+  <!-- pasta traseira -->
+  <path d="M40 300 L40 90 L170 90 L195 115 L440 115 L440 300 Z" fill="#1f2216" stroke="#3a3c2f" stroke-width="2"/>
+
+  <!-- folha de papel -->
+  <g transform="translate(70 60) rotate(-2)">
+    <rect x="0" y="0" width="300" height="230" fill="url(#paperGrad)" stroke="#8c8567" stroke-width="1"/>
+    <rect x="20" y="24" width="150" height="12" fill="#3a3c2f"/>
+    <g stroke="#6f6a52" stroke-width="3" stroke-linecap="round">
+      <line x1="20" y1="56" x2="260" y2="56"/>
+      <line x1="20" y1="72" x2="240" y2="72"/>
+      <line x1="20" y1="88" x2="255" y2="88"/>
+      <line x1="20" y1="104" x2="200" y2="104"/>
+      <line x1="20" y1="132" x2="260" y2="132"/>
+      <line x1="20" y1="148" x2="230" y2="148"/>
+      <line x1="20" y1="164" x2="250" y2="164"/>
+    </g>
+    <rect x="20" y="132" width="80" height="12" fill="#0c0d0a"/>
+    <rect x="150" y="164" width="60" height="12" fill="#0c0d0a"/>
+
+    <!-- carimbo -->
+    <g transform="translate(215 40) rotate(-18)">
+      <circle cx="0" cy="0" r="34" fill="none" stroke="#8c0f0f" stroke-width="3"/>
+      <text x="0" y="-4" text-anchor="middle" font-family="Special Elite, monospace" font-size="9" fill="#8c0f0f">ARQUIVO</text>
+      <text x="0" y="10" text-anchor="middle" font-family="Special Elite, monospace" font-size="9" fill="#8c0f0f">CLASSIFICADO</text>
+    </g>
+  </g>
+
+  <!-- marcador de biorrisco -->
+  <g transform="translate(392 250)" fill="#c31d1d">
+    <circle cx="0" cy="0" r="9"/>
+    <path d="M0 0 L0 -34 A17 17 0 0 1 15 -18 Z"/>
+    <path d="M0 0 L29 -10 A17 17 0 0 1 25 8 Z"/>
+    <path d="M0 0 L18 27 A17 17 0 0 1 -6 30 Z"/>
+    <path d="M0 0 L-25 20 A17 17 0 0 1 -20 -6 Z"/>
+    <path d="M0 0 L-15 -30 A17 17 0 0 1 8 -30 Z"/>
+    <path d="M0 0 L-30 5 A17 17 0 0 1 -18 -22 Z"/>
+  </g>
+</svg>

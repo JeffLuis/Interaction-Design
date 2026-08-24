@@ -1,0 +1,80 @@
+/* ==========================================================================
+   variables.css
+   Tokens de design do site. Todo o restante do CSS deve consumir estas
+   variáveis em vez de valores soltos, para manter consistência visual.
+   ========================================================================== */
+
+:root {
+  /* --- Cores base ------------------------------------------------------- */
+  --color-void:        #0c0d0a;  /* fundo principal, quase preto */
+  --color-panel:        #17190f;  /* painéis, cartões, cabeçalho */
+  --color-panel-raised: #1f2216;  /* elementos "acima" do painel */
+  --color-line:         #3a3c2f;  /* linhas divisórias sutis */
+  --color-line-strong:  #565a44;  /* linhas divisórias em destaque */
+
+  --color-paper:   #e9e3cd;  /* "papel" de arquivo datilografado */
+  --color-ink:     #d9d3bc;  /* texto claro sobre fundo escuro */
+  --color-ink-dim: #9b9782;  /* texto secundário sobre fundo escuro */
+
+  --color-blood:        #8c0f0f;  /* vermelho principal */
+  --color-blood-bright: #c31d1d;  /* vermelho de destaque / hover */
+  --color-blood-deep:   #520a0a;  /* vermelho escuro / sombras */
+
+  --color-amber:  #a9822f;  /* dourado envelhecido, uso decorativo */
+
+  --color-status-safe:    #3f6b44;
+  --color-status-caution: #b98a2c;
+  --color-status-danger:  #8c0f0f;
+
+  --color-focus: #e2c14c; /* contorno de foco de teclado, alto contraste */
+
+  /* --- Tipografia --------------------------------------------------------
+     "display": títulos condensados, estilo estêncil militar
+     "body":    texto corrido, legível
+     "type":    máquina de escrever, usado em pequenas doses (rótulos, tags)
+  -------------------------------------------------------------------------- */
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body:    'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-type:    'Special Elite', 'Courier New', monospace;
+
+  --fs-2xs: 0.72rem;
+  --fs-xs:  0.8rem;
+  --fs-sm:  0.9rem;
+  --fs-md:  1rem;
+  --fs-lg:  1.2rem;
+  --fs-xl:  1.6rem;
+  --fs-2xl: 2.4rem;
+  --fs-3xl: 3.4rem;
+
+  /* --- Espaçamento -------------------------------------------------------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+
+  /* --- Layout --------------------------------------------------------- */
+  --content-width: 72rem;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --border-hairline: 1px solid var(--color-line);
+
+  /* --- Movimento --------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-med:  400ms;
+
+  /* Ícone de biorrisco (símbolo genérico de domínio público) usado como
+     máscara CSS em pequenos rótulos. */
+  --icon-biohazard: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23000'%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3Cpath d='M50 50 L50 10 A20 20 0 0 1 68 22 Z'/%3E%3Cpath d='M50 50 L83 32 A20 20 0 0 1 78 56 Z'/%3E%3Cpath d='M50 50 L68 78 A20 20 0 0 1 44 88 Z'/%3E%3Cpath d='M50 50 L17 68 A20 20 0 0 1 22 44 Z'/%3E%3Cpath d='M50 50 L32 17 A20 20 0 0 1 56 22 Z'/%3E%3Cpath d='M50 50 L2 50 A20 20 0 0 1 12 32 Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-med: 0ms;
+  }
+}

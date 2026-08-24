@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor de Menus — Arquivo de Contenção</title>
+<meta name="description" content="Editor visual de menus de páginas HTML: personalize itens, cores, bordas e espaçamento com pré-visualização em tempo real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <div class="brand">      
+      <span class="brand__text">
+        <span class="brand__title">Arquivo de Contenção</span>
+        <span class="brand__subtitle">Trabalhos — Interação Web</span>
+      </span>
+    </div>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Apresentação</a></li>
+        <li><a class="site-nav__link" href="editor.html" aria-current="page">Editor de Menus</a></li>
+        <li><a class="site-nav__link" href="#" aria-disabled="true" title="Ainda não publicado">Trabalho 03 <span class="visually-hidden">(em breve)</span></a></li>
+        <li><a class="site-nav__link" href="#" aria-disabled="true" title="Ainda não publicado">Trabalho 04 <span class="visually-hidden">(em breve)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" id="conteudo">
+  <div class="wrap">
+
+    <section class="section section--flush" aria-labelledby="editor-title">
+      <div class="section__head">
+        <p class="eyebrow">Trabalho 02</p>
+        <h1 id="editor-title">Editor de menus de páginas HTML</h1>
+        <p>
+          Preencha o formulário à esquerda para montar um menu de navegação: adicione ou
+          remova itens, insira uma imagem, escolha cores e ajuste bordas, tamanho e
+          espaçamento. O resultado aparece imediatamente no monitor à direita — nada aqui
+          precisa ser exportado.
+        </p>
+      </div>
+
+      <div class="console">
+        <div class="console__bar">
+          <h2>Console de configuração</h2>
+          <span class="stamp">ao vivo</span>
+        </div>
+
+        <div class="console__body">
+          <!-- ===================== FORMULÁRIO DE EDIÇÃO ===================== -->
+          <form class="editor-form" id="menu-editor-form" novalidate>
+
+            <fieldset>
+              <legend>Itens do menu</legend>
+              <div class="item-list" id="item-list"><!-- itens inseridos via JS --></div>
+              <div class="item-list__actions">
+                <span class="item-list__count" id="item-count" aria-live="polite">0 de 8 itens</span>
+                <button type="button" class="btn btn--ghost" id="add-item-btn">+ Adicionar item</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Imagem do menu</legend>
+              <div class="field">
+                <label for="menu-image">Escolher imagem (opcional)</label>
+                <input type="file" id="menu-image" accept="image/*">
+                <span class="field__hint">PNG, JPG ou SVG, até 2&nbsp;MB.</span>
+                <span class="field__error" id="image-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <span id="image-position-label">Posição da imagem</span>
+                <div class="radio-group" role="radiogroup" aria-labelledby="image-position-label">
+                  <label><input type="radio" name="image-position" value="top" checked> Em cima</label>
+                  <label><input type="radio" name="image-position" value="side"> Ao lado</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="image-size">Tamanho da imagem</label>
+                <div class="range-row">
+                  <input type="range" id="image-size" min="40" max="640" step="10" value="140">
+                  <output id="image-size-out" for="image-size">140px</output>
+                </div>
+              </div>
+              <button type="button" class="btn btn--ghost" id="remove-image-btn" disabled>Remover imagem</button>
+            </fieldset>
+
+            <fieldset>
+              <legend>Cores</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="menu-bg">Fundo do menu</label>
+                  <input type="color" id="menu-bg" value="#17190f">
+                </div>
+                <div class="field">
+                  <label for="item-bg">Fundo dos itens</label>
+                  <input type="color" id="item-bg" value="#8c0f0f">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="item-text-color">Cor do texto</label>
+                  <input type="color" id="item-text-color" value="#e9e3cd">
+                </div>
+                <div class="field">
+                  <label for="border-color">Cor da borda</label>
+                  <input type="color" id="border-color" value="#c31d1d">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Bordas e tamanho</legend>
+              <div class="field">
+                <label for="border-width">Espessura da borda</label>
+                <div class="range-row">
+                  <input type="range" id="border-width" min="0" max="6" step="1" value="1">
+                  <output id="border-width-out" for="border-width">1px</output>
+                </div>
+              </div>
+              <div class="field">
+                <label for="border-radius">Arredondamento</label>
+                <div class="range-row">
+                  <input type="range" id="border-radius" min="0" max="24" step="1" value="2">
+                  <output id="border-radius-out" for="border-radius">2px</output>
+                </div>
+              </div>
+              <div class="field">
+                <label for="font-size">Tamanho do texto</label>
+                <div class="range-row">
+                  <input type="range" id="font-size" min="11" max="22" step="1" value="14">
+                  <output id="font-size-out" for="font-size">14px</output>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="padding-y">Altura dos itens</label>
+                  <div class="range-row">
+                    <input type="range" id="padding-y" min="4" max="28" step="1" value="12">
+                    <output id="padding-y-out" for="padding-y">12px</output>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="padding-x">Largura dos itens</label>
+                  <div class="range-row">
+                    <input type="range" id="padding-x" min="8" max="40" step="1" value="18">
+                    <output id="padding-x-out" for="padding-x">18px</output>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Distribuição e espaçamento</legend>
+              <div class="field">
+                <label for="item-gap">Espaço entre itens</label>
+                <div class="range-row">
+                  <input type="range" id="item-gap" min="0" max="32" step="1" value="4">
+                  <output id="item-gap-out" for="item-gap">4px</output>
+                </div>
+              </div>
+              <div class="field">
+                <label for="distribution">Alinhamento dos itens</label>
+                <select id="distribution">
+                  <option value="flex-start">Início</option>
+                  <option value="center">Centro</option>
+                  <option value="space-between">Distribuído nas pontas</option>
+                  <option value="space-around">Distribuído com respiro</option>
+                  <option value="flex-end">Fim</option>
+                </select>
+              </div>
+            </fieldset>
+
+          </form>
+
+          <!-- ===================== PRÉ-VISUALIZAÇÃO ===================== -->
+          <div class="preview-panel">
+            <div class="preview-panel__label">
+              <span>Monitor — pré-visualização</span>
+              <span id="preview-status">sincronizado</span>
+            </div>
+            <div class="monitor">
+              <nav class="generated-menu" id="menu-preview" aria-label="Pré-visualização do menu gerado"></nav>
+            </div>
+            <p class="note"><strong>Dica:</strong> este menu é só para visualização — ele não precisa ser exportado nem salvo em arquivo separado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap status-bar">
+    <div class="status-bar__ampoules" aria-hidden="true">
+      <span class="ampoule ampoule--safe"></span>
+      <span class="ampoule ampoule--caution"></span>
+      <span class="ampoule ampoule--danger"></span>
+    </div>
+    <p class="status-bar__text">Status do arquivo: seção 2 de 2 disponível</p>
+    <p class="site-footer__credit">Trabalho acadêmico — Disciplina de Interação Web</p>
+  </div>
+</footer>
+
+<script src="js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* ==========================================================================
+   editor.css
+   Estilos exclusivos da página 2: o Console de Edição de Menu.
+   Painel esquerdo = formulário (terminal). Painel direito = pré-visualização
+   ao vivo do menu gerado, dentro de uma moldura de "monitor".
+   ========================================================================== */
+
+.console {
+  border: var(--border-hairline);
+  background: var(--color-panel);
+}
+
+.console__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
+  border-bottom: var(--border-hairline);
+  background: var(--color-panel-raised);
+  flex-wrap: wrap;
+}
+
+.console__bar h2 {
+  font-size: var(--fs-md);
+}
+
+.console__body {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+}
+
+@media (max-width: 56rem) {
+  .console__body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Painel de formulário ---------------------------------------- */
+
+.editor-form {
+  padding: var(--space-md);
+  border-right: var(--border-hairline);
+  max-height: 44rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 56rem) {
+  .editor-form {
+    border-right: none;
+    border-bottom: var(--border-hairline);
+    max-height: none;
+  }
+}
+
+.editor-form fieldset {
+  border-top: var(--border-hairline);
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.editor-form fieldset:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.editor-form legend {
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-blood-bright);
+  padding: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field label {
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.03em;
+  color: var(--color-ink-dim);
+}
+
+.field__hint {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-dim);
+  opacity: 0.75;
+}
+
+.field__error {
+  font-size: var(--fs-2xs);
+  color: var(--color-blood-bright);
+  min-height: 1em;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.editor-form input[type='text'],
+.editor-form input[type='number'],
+.editor-form select {
+  background: var(--color-void);
+  border: 1px solid var(--color-line);
+  color: var(--color-paper);
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  width: 100%;
+}
+
+.editor-form input[type='text']:focus-visible,
+.editor-form input[type='number']:focus-visible,
+.editor-form select:focus-visible {
+  border-color: var(--color-blood-bright);
+}
+
+.editor-form input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.editor-form input[type='color'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2.2rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  background: var(--color-void);
+  cursor: pointer;
+}
+.editor-form input[type='color']::-webkit-color-swatch-wrapper { padding: 0; }
+.editor-form input[type='color']::-webkit-color-swatch { border: none; border-radius: 1px; }
+
+.editor-form input[type='range'] {
+  width: 100%;
+  accent-color: var(--color-blood-bright);
+}
+
+.range-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.range-row output {
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  color: var(--color-paper);
+  min-width: 3.4em;
+  text-align: right;
+}
+
+.radio-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: var(--fs-sm);
+  color: var(--color-ink);
+}
+
+/* ---------- Lista de itens de menu --------------------------------------- */
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-xs);
+  align-items: start;
+  background: var(--color-void);
+  border: 1px solid var(--color-line);
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+}
+
+.item-row .field {
+  margin-bottom: 0;
+}
+
+.item-row__remove {
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-line);
+  color: var(--color-ink-dim);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-type);
+  line-height: 1;
+}
+
+.item-row__remove:hover:not(:disabled),
+.item-row__remove:focus-visible:not(:disabled) {
+  color: var(--color-blood-bright);
+  border-color: var(--color-blood-bright);
+}
+
+.item-list__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-sm);
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.item-list__count {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-dim);
+  font-family: var(--font-type);
+}
+
+/* ---------- Painel de pré-visualização ----------------------------------- */
+
+.preview-panel {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.preview-panel__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-type);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-dim);
+  letter-spacing: 0.06em;
+}
+
+.monitor {
+  position: relative;
+  flex: 1;
+  min-height: 20rem;
+  background: #05130a;
+  border: 10px solid #050603;
+  border-radius: 10px;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.7), 0 6px 18px rgba(0,0,0,0.5);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.monitor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(180deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 3px);
+  border-radius: 4px;
+}
+
+/* Menu gerado dinamicamente pelo JS. Estilos base ficam aqui; cores,
+   tamanhos e espaçamentos específicos são aplicados inline pelo script,
+   conforme os controles do formulário. */
+.generated-menu {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.generated-menu__logo {
+  display: block;
+  object-fit: contain;
+}
+
+.generated-menu__item {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.generated-menu--empty {
+  font-family: var(--font-type);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-dim);
+  text-align: center;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquivo de Contenção — Interação Web</title>
+<meta name="description" content="Site de apresentação dos trabalhos da disciplina de Interação Web, com tema inspirado na franquia de jogos Resident Evil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <div class="brand">      
+      <span class="brand__text">
+        <span class="brand__title">Arquivo de Contenção</span>
+        <span class="brand__subtitle">Trabalhos — Interação Web</span>
+      </span>
+    </div>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html" aria-current="page">Apresentação</a></li>
+        <li><a class="site-nav__link" href="editor.html">Editor de Menus</a></li>
+        <li><a class="site-nav__link" href="#" aria-disabled="true" title="Ainda não publicado">Trabalho 03 <span class="visually-hidden">(em breve)</span></a></li>
+        <li><a class="site-nav__link" href="#" aria-disabled="true" title="Ainda não publicado">Trabalho 04 <span class="visually-hidden">(em breve)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" id="conteudo">
+  <div class="wrap">
+
+    <section class="section hero" aria-labelledby="hero-title">
+      <div class="hero__file">
+        <p class="eyebrow">Relatório de abertura</p>
+        <h1 class="hero__title" id="hero-title">Bem-vindo ao dossiê de trabalhos da disciplina</h1>
+        <p class="hero__lede">
+          Este site reúne os trabalhos práticos da disciplina de Interação Web ao longo do
+          semestre. Cada exercício é tratado aqui como um item catalogado de um arquivo de
+          investigação — e o tema escolhido para ambientar essa investigação é a franquia de
+          jogos <strong>Resident Evil</strong>, da Capcom, um dos maiores nomes do gênero
+          survival horror.
+        </p>
+        <dl class="hero__meta">
+          <div><dt>Disciplina:</dt><dd>Interação Web</dd></div>
+          <div><dt>Status do arquivo:</dt><dd>em construção</dd></div>
+          <div><dt>Tema:</dt><dd>Resident Evil</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sobre-site-title">
+      <div class="section__head">
+        <p class="eyebrow">Sobre este site</p>
+        <h2 id="sobre-site-title">O que você vai encontrar aqui</h2>
+        <p>
+          Esta página de apresentação explica o propósito do site: funcionar como ponto de
+          entrada para os trabalhos práticos da disciplina. Conforme novos exercícios forem
+          concluídos ao longo do semestre, eles serão adicionados como novas páginas,
+          acessíveis pelo menu no topo.
+        </p>
+      </div>
+
+      <img class="hero-figure" src="img/hero-dossier.svg" alt="Ilustração de uma pasta de arquivo aberta com um relatório datilografado, um carimbo de classificado e um marcador de biorrisco" width="480" height="360" loading="lazy">
+
+      <div class="card-grid card-grid--spaced">
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v5"/></svg>
+          <h3>Sem frameworks</h3>
+          <p>Todo o visual é construído com CSS próprio, organizado em arquivos de variáveis, reset e estilos autorais — sem bibliotecas externas.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16"/><circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+          <h3>Editor de menus</h3>
+          <p>O segundo trabalho é um editor visual de menus de páginas HTML, com formulário e pré-visualização ao vivo lado a lado.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 3v18M3 9h5"/></svg>
+          <h3>Responsivo</h3>
+          <p>O layout foi pensado para funcionar tanto em telas de computador quanto em celulares, mantendo a leitura confortável em qualquer tamanho.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="franquia-title">
+      <div class="section__head">
+        <p class="eyebrow">Sobre o tema escolhido</p>
+        <h2 id="franquia-title">A franquia Resident Evil</h2>
+        <p>
+          Criada pela Capcom e lançada originalmente em 1996, Resident Evil ajudou a
+          popularizar o gênero survival horror nos videogames, combinando gerenciamento de
+          recursos escassos, quebra-cabeças ambientados em cenários fechados e uma mitologia
+          sobre corporações farmacêuticas, armas biológicas e surtos de infecção. Ao longo de
+          quase três décadas a série se expandiu para dezenas de jogos, filmes e produções em
+          quadrinhos, e segue sendo relançada e reinventada para novas gerações de jogadores.
+        </p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__entry">
+          <span class="timeline__year">1996</span>
+          <h3>Resident Evil</h3>
+          <p>O primeiro jogo da série, ambientado em uma mansão isolada, define a fórmula de exploração, itens limitados e combate contra criaturas infectadas.</p>
+        </li>
+        <li class="timeline__entry">
+          <span class="timeline__year">1998–2000</span>
+          <h3>Resident Evil 2, 3 e Code: Veronica</h3>
+          <p>A história se expande para Raccoon City e além dela, consolidando personagens que se tornariam ícones da franquia.</p>
+        </li>
+        <li class="timeline__entry">
+          <span class="timeline__year">2005</span>
+          <h3>Resident Evil 4</h3>
+          <p>Uma mudança de câmera e de ritmo redefine o gênero de terror de ação e influencia inúmeros jogos posteriores.</p>
+        </li>
+        <li class="timeline__entry">
+          <span class="timeline__year">2017</span>
+          <h3>Resident Evil 7: Biohazard</h3>
+          <p>A série retorna às raízes de terror e suspense, agora em primeira pessoa.</p>
+        </li>
+        <li class="timeline__entry">
+          <span class="timeline__year">2019–2023</span>
+          <h3>Remakes modernos</h3>
+          <p>Resident Evil 2, 3 e 4 ganham versões refeitas com visual e jogabilidade atualizados, reapresentando histórias clássicas a um novo público.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="proximo-title">
+      <div class="section__head">
+        <p class="eyebrow">Próximo item do arquivo</p>
+        <h2 id="proximo-title">Confira o editor de menus</h2>
+        <p>
+          O segundo trabalho desta disciplina está disponível no menu acima. Ele reaproveita o
+          mesmo cabeçalho, menu e rodapé desta página, mas concentra na área principal um
+          console para criar e personalizar um menu de navegação — sem precisar exportar nada,
+          o resultado é visto em tempo real.
+        </p>
+      </div>
+      <a class="btn" href="editor.html">Abrir o editor de menus →</a>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap status-bar">
+    <div class="status-bar__ampoules" aria-hidden="true">
+      <span class="ampoule ampoule--safe"></span>
+      <span class="ampoule ampoule--caution"></span>
+      <span class="ampoule ampoule--danger"></span>
+    </div>
+    <p class="status-bar__text">Status do arquivo: seção 1 de 2 disponível</p>
+    <p class="site-footer__credit">Trabalho acadêmico — Disciplina de Interação Web</p>
+  </div>
+</footer>
+
+</body>
+</html>
