@@ -37,6 +37,13 @@
   gap: var(--space-xs);
 }
 
+.brand__mark {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--color-blood-bright);
+  flex-shrink: 0;
+}
+
 .brand__text {
   display: flex;
   flex-direction: column;
@@ -194,4 +201,18 @@
     align-items: flex-start;
     gap: var(--space-2xs);
   }
+}
+
+/* ---------- Custom elements do site ---------------------------------------
+   <site-header> e <site-footer> não geram caixa própria: o <header> e o
+   <footer> internos se comportam como filhos diretos do body (o cabeçalho
+   fixo com position: sticky continua funcionando). */
+
+site-header,
+site-footer {
+  display: contents;
+}
+
+site-nav {
+  display: block;
 }

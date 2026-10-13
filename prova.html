@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova On-line — Arquivo de Contenção</title>
+<meta name="description" content="Prova on-line de múltipla escolha sobre a franquia Resident Evil, feita com um web component.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<script src="js/site-components.js" defer></script>
+<script src="js/quiz-data.js" defer></script>
+<script src="js/my-test.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<site-header></site-header>
+
+<main class="site-main" id="conteudo">
+  <div class="wrap">
+
+    <section class="section section--flush" aria-labelledby="prova-title">
+      <div class="section__head">
+        <p class="eyebrow">Trabalho 03</p>
+        <h1 id="prova-title">Prova on-line</h1>
+        <p>
+          Teste seus conhecimentos sobre a franquia Resident Evil. A prova abaixo é um web
+          component (<code>&lt;my-test&gt;</code>): as questões vêm de um objeto literal em
+          JavaScript, então basta incluir uma nova questão nele para que ela apareça e seja
+          corrigida como as demais.
+        </p>
+      </div>
+
+      <my-test>
+        <span slot="titulo">Prova: franquia Resident Evil</span>
+        <span slot="introducao">Escolha uma alternativa em cada questão. O botão de correção é liberado quando todas estiverem respondidas.</span>
+      </my-test>
+    </section>
+
+  </div>
+</main>
+
+<site-footer></site-footer>
+
+</body>
+</html>

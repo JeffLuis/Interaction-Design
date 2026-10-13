@@ -13,29 +13,12 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/components.css">
+<script src="js/site-components.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header">
-  <div class="wrap site-header__bar">
-    <div class="brand">      
-      <span class="brand__text">
-        <span class="brand__title">Arquivo de Contenção</span>
-        <span class="brand__subtitle">Trabalhos — Interação Web</span>
-      </span>
-    </div>
-
-    <nav class="site-nav" aria-label="Navegação principal">
-      <ul class="site-nav__list">
-        <li><a class="site-nav__link" href="index.html" aria-current="page">Apresentação</a></li>
-        <li><a class="site-nav__link" href="editor.html">Editor de Menus</a></li>
-        <li><a class="site-nav__link" href="#" aria-disabled="true" title="Ainda não publicado">Trabalho 03 <span class="visually-hidden">(em breve)</span></a></li>
-        <li><a class="site-nav__link" href="#" aria-disabled="true" title="Ainda não publicado">Trabalho 04 <span class="visually-hidden">(em breve)</span></a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<site-header></site-header>
 
 <main class="site-main" id="conteudo">
   <div class="wrap">
@@ -152,17 +135,7 @@
   </div>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap status-bar">
-    <div class="status-bar__ampoules" aria-hidden="true">
-      <span class="ampoule ampoule--safe"></span>
-      <span class="ampoule ampoule--caution"></span>
-      <span class="ampoule ampoule--danger"></span>
-    </div>
-    <p class="status-bar__text">Status do arquivo: seção 1 de 2 disponível</p>
-    <p class="site-footer__credit">Trabalho acadêmico — Disciplina de Interação Web</p>
-  </div>
-</footer>
+<site-footer></site-footer>
 
 </body>
 </html>
